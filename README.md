@@ -20,7 +20,11 @@ This project aims to create realistic school scenarios for testing educational s
    ```bash
    cd typicalSchoolGeneratorETS
    ```
-3. Run the main script:
+3. Install the dependencies
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Run the main script:
    ```bash
    python main.py
    ```
