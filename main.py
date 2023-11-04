@@ -96,5 +96,5 @@ if __name__ == "__main__":
         'encoding': "UTF-8",
         '--user-style-sheet': "style.css"
     }
-    config = pdfkit.configuration(wkhtmltopdf="C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
+    config = pdfkit.configuration(wkhtmltopdf="wkhtmltopdf/bin/wkhtmltopdf.exe")
     pdfkit.from_file('output.html', output_path="output.pdf", configuration=config, options=opt)
