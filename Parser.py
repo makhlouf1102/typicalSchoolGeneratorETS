@@ -26,15 +26,6 @@ class Parser(ABC):
     def parse_course_details(html) -> str:
         html = html.find_all("div")[0]
         html = str(html)
-        # result: str = ""
-        # for ele in html:
-        #     if ele.name == "p":
-        #         result += ele.text.strip() + '\n'
-        #     if ele.name == "ul":
-        #         li_list = ele.find_all("li")
-        #         for li in li_list:
-        #             result += '     - ' + li.text.strip() + '\n'
-
         return html
 
     def get_courses_div_content(self) -> str:

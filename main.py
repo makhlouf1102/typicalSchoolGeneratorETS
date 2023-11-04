@@ -6,9 +6,7 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
-import json
 import pdfkit
-from jinja2 import Template
 
 if __name__ == "__main__":
 
