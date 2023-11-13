@@ -1,12 +1,13 @@
 # --------- imports ---------
-from Session import Session
-from UserPrompt import UserPrompt
+from commons.Session import Session
+from prompts.UserPrompt import UserPrompt
 from constants import *
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 import pdfkit
+import os
 
 if __name__ == "__main__":
 
@@ -21,6 +22,15 @@ if __name__ == "__main__":
                 </head>
                 <body>
             """
+
+    # output files
+    project_root: str = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+    html_output_file = os.path.join(project_root, 'data', 'output.html')
+
+    pdf_output_file = os.path.join(project_root, 'data', 'output.pdf')
+
+    css_style_file = os.path.join(project_root, 'assets', 'style.css')
 
     # Display all the programs that offers ETS & Ask the user to pick a program
     print("Welcome to the typical path generator for ETS students please pick your desired program !")
@@ -77,6 +87,7 @@ if __name__ == "__main__":
         # Generating the json file
         json_file[s.get_title()] = s.get_dict()
         html_template += s.get_html()
+        break
     html_template += """
             </body>
         </html>
@@ -84,7 +95,7 @@ if __name__ == "__main__":
     driver.implicitly_wait(10)
     driver.quit()
 
-    with open('output.html', 'w', encoding='utf-8') as f:
+    with open(html_output_file, 'w', encoding='utf-8') as f:
         f.write(html_template)
 
     opt = {
@@ -94,7 +105,7 @@ if __name__ == "__main__":
         'margin-bottom': '0.75in',
         'margin-left': '0.75in',
         'encoding': "UTF-8",
-        '--user-style-sheet': "style.css"
+        '--user-style-sheet': css_style_file
     }
     config = pdfkit.configuration(wkhtmltopdf="wkhtmltopdf/bin/wkhtmltopdf.exe")
-    pdfkit.from_file('output.html', output_path="output.pdf", configuration=config, options=opt)
+    pdfkit.from_file(html_output_file, output_path=pdf_output_file, configuration=config, options=opt)

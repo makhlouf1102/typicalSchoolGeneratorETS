@@ -1,6 +1,6 @@
-from Course import Course
-from Parser import Parser
-from Session import Session
+from src.commons.Course import Course
+from .Parser import Parser
+from src.commons.Session import Session
 
 
 class LogParser(Parser):

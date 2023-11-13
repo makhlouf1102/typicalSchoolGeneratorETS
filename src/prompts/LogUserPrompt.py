@@ -1,4 +1,4 @@
-from UserPrompt import UserPrompt
+from .UserPrompt import UserPrompt
 
 
 class LogUserPrompt(UserPrompt):

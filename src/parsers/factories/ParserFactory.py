@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from Parser import Parser
+from src.parsers.Parser import Parser
 
 
 class ParserFactory(ABC):

@@ -1,4 +1,4 @@
-from Course import Course
+from src.commons.Course import Course
 
 
 class Session:

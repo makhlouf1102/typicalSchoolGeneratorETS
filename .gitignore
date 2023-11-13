@@ -5,8 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
-output.html
-output.pdf
+data/output.html
+data/output.pdf
 # Distribution / packaging
 .Python
 build/

@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from constants import *
+from src.constants import *
 
 
 class UserPrompt(ABC):

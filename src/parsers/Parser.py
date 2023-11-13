@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 
-from Course import Course
-from Session import Session
+from src.commons.Session import Session
 
 
 class Parser(ABC):

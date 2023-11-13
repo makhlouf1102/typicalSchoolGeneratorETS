@@ -1,6 +1,6 @@
-from LogParser import LogParser
-from Parser import Parser
-from ParserFactory import ParserFactory
+from src.parsers.LogParser import LogParser
+from src.parsers.Parser import Parser
+from .ParserFactory import ParserFactory
 
 
 class LogParserFactory(ParserFactory):
