@@ -26,7 +26,7 @@ This project aims to create realistic school scenarios for testing educational s
    ```
 4. Run the main script:
    ```bash
-   python main.py
+   python src/main.py
    ```
 
 ## Made By:
